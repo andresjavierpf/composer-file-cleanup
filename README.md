@@ -18,7 +18,7 @@ This plugin helps to remove unnecessary files from the installed Composer packag
 
 To customize the files to be excluded, you can define them in the root `composer.json` under the extra section. The list of paths must be relative to the vendor directory.
 
-###### Example: Exclude files from Google Apiclient Services
+###### Example: Exclude files README, CHANGELOG, LICENSE from all dependencies and SECURITY.md from Google Apiclient Services
 
 ```json
 {
@@ -27,9 +27,10 @@ To customize the files to be excluded, you can define them in the root `composer
     },
     "extra": {
         "exclude-files": [
-            "google/apiclient-services/README.md",
-            "google/apiclient-services/CHANGELOG.md",
-            "google/apiclient-services/LICENSE"
+            "README.md",
+            "CHANGELOG.md",
+            "LICENSE",
+            "google/apiclient-services/SECURITY.md",
         ]
     }
 }
