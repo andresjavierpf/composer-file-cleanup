@@ -1,7 +1,5 @@
 # Composer File Cleanup
 
-[![License][license-badge]][packagist.org]
-
 A Composer plugin to clean up unnecessary files from installed dependencies.
 
 ## Installation
@@ -22,22 +20,22 @@ To customize the files to be excluded, you can define them in the root `composer
 
 ```json
 {
-    "require": {
-        "andresjavierpf/composer-file-cleanup": "^0.1"
-    },
-    "extra": {
-        "exclude-files": [
-            "README.md",
-            "CHANGELOG.md",
-            "LICENSE",
-            "google/apiclient-services/SECURITY.md",
-        ]
-    }
+	"require": {
+		"andresjavierpf/composer-file-cleanup": "^0.1"
+	},
+	"extra": {
+		"exclude-files": [
+			"README.md",
+			"CHANGELOG.md",
+			"LICENSE",
+			"google/apiclient-services/SECURITY.md"
+		]
+	}
 }
+```
 
 This plugin will automatically run before Composer's autoloader is generated, ensuring that the specified files are removed from the autoload map. Please note that this plugin only operates on the root `composer.json`.
 
 ## License
 
 This library is licensed under the MIT License.
-```
