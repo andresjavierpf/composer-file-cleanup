@@ -1,5 +1,5 @@
 <?php
-namespace AndrusDev\Composer;
+namespace Andrusdev\Composer;
 
 use Composer\Script\Event;
 use Symfony\Component\Filesystem\Filesystem;
