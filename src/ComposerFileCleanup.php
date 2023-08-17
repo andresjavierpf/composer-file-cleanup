@@ -13,10 +13,18 @@ class ComposerFileCleanup
         
         $itemsToRemove = $extra['composer-file-cleanup'] ?? [];
 
-        if (!empty($itemsToRemove)) {
+        $defaultItemsToRemove = [
+            'README.md',
+            'CHANGELOG.md',
+            'LICENSE',
+        ];
+
+        $allItemsToRemove = array_merge($defaultItemsToRemove, $itemsToRemove);
+
+        if (!empty($allItemsToRemove)) {
             $vendorDir = $composer->getConfig()->get('vendor-dir');
             $filesystem = new Filesystem();
-            $removedCount = self::removeItemsInPackages($vendorDir, $itemsToRemove, $filesystem);
+            $removedCount = self::removeItemsInPackages($vendorDir, $allItemsToRemove, $filesystem);
 
             if ($removedCount > 0) {
                 $event->getIO()->write(sprintf('Removed %s items', $removedCount));
