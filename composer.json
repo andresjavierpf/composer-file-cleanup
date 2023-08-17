@@ -25,5 +25,10 @@
             "dev-main": "0.2-dev"
         },
         "class": "Andrusdev\\Composer\\ComposerFileCleanup"
+    },
+    "scripts": {
+        "pre-autoload-dump": [
+            "Andrusdev\\Composer\\ComposerFileCleanup::cleanup"
+        ]
     }
 }
